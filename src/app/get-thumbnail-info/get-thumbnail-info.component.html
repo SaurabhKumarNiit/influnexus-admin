@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<body>
+  <div class="container">
+    <h2 class="fs-4 mb-3" style="color: #fff">Thumbnail & Vedio INFO !</h2>
+    <div class="col">
+      <table class="table bg-white rounded shadow-sm table-hover rounded">
+        <thead>
+          <tr>
+            <th scope="col" width="50">#</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Thumbnail</th>
+            <th scope="col">Vedio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let info of dataInfo; let i = index" id="data">
+            <th scope="row">{{ i + 1 }}.</th>
+            <td>
+              <strong>{{ info.name }}</strong>
+            </td>
+
+<!-- 
+            <h2>Thumbnail</h2>
+            <img [src]="thumbnailUrl" alt="Video Thumbnail">
+         
+            <h2>Video</h2>
+            <video [src]="videoUrl" width="640" height="360" controls>
+              Your browser does not support the video tag.
+            </video> -->
+
+
+            <td>
+              <!-- <strong>{{ info.thumbnails }}</strong> -->
+              <img  [src]="selectedImage" alt="{{info.thumbnails}}" style="height: 150px; width: 150px;" id="photo">
+              <!-- <img [src]="thumbnailUrl" alt="Video Thumbnail"> -->
+            </td>
+            <td>
+              <!-- <strong>{{ info.videos }}</strong> -->
+              <video [src]="info.videos" width="240" height="140" controls>
+                Your browser does not support the video tag.
+              </video>
+            </td>
+            <br />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

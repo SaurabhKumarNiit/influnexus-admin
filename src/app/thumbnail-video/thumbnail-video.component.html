@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<body>
+  <div class="container">
+    <header>Add Thumbnail & Vedio</header>
+
+    <form (ngSubmit)="onSubmit()" #uploadForm="ngForm">
+      <div class="details ID">
+        <span class="title">Add Correct Data</span>
+        <div class="fields">
+          <div class="input-field">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="name"
+              required
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="thumbnails">Thumbnail:</label>
+            <input
+              type="file"
+              id="thumbnails"
+              name="thumbnails"
+              accept="image/*"
+              (change)="onImageSelected($event)"
+            />
+            <!-- <h2>Selected Image:</h2> -->
+            <!-- <img [src]="selectedImage" alt="Selected Image"> -->
+          </div>
+
+          <div class="input-field">
+            <label for="videos">Video:</label>
+            <input
+              type="file"
+              id="videos"
+              name="videos"
+              accept="video/*"
+              (change)="onVideoSelected($event)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Upload Data</button>
+    </form>
+
+    <!-- <form (ngSubmit)="onSubmit()" #uploadForm="ngForm">
+            <label for="thumbnails">Thumbnail:</label>
+            <input type="file" id="thumbnails" name="thumbnails" accept="image/*" (change)="onThumbnailSelected($event)">
+            
+            <label for="videos">Video:</label>
+            <input type="file" id="videos" name="videos" accept="video/*" (change)="onVideoSelected($event)">
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="name" required>
+    
+            <button type="submit">Upload</button>
+        </form> -->
+  </div>
+</body>
